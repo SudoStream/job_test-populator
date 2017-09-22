@@ -42,7 +42,7 @@ trait UsersDenormalisedInserter {
             )
         }
 
-        val socialNetworkIds: List[Document] = user.socialNetworkIds.map {
+        val socialNetworkIdsAsDocs : List[Document] = user.socialNetworkIds.map {
           socialNetworkId =>
             Document(
               "socialNetworkName" -> socialNetworkId.socialNetworkName,
@@ -52,6 +52,7 @@ trait UsersDenormalisedInserter {
 
         Document(
           "_id" -> user.timeToTeachId,
+          "socialNetworkIds" -> socialNetworkIdsAsDocs,
           "fullName" -> user.fullName,
           "givenName" -> user.givenName,
           "familyName" -> user.familyName,

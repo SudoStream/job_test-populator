@@ -1,6 +1,12 @@
 [
     {
         "_id": "someId123",
+        "socialNetworkIds": [
+            {
+                "socialNetworkName": "GOOGLE",
+                "id" : "111111"
+            }
+        ],
         "fullName": "Andy Boyle",
         "givenName": "Andy",
         "familyName": "Boyle",
@@ -18,6 +24,12 @@
     {
         "_id": "someId124",
         "fullName": "Yvonne Boyle",
+        "socialNetworkIds": [
+            {
+                "socialNetworkName": "GOOGLE",
+                "id" : "22222"
+            }
+        ],
         "givenName": "Yvonne",
         "familyName": "Boyle",
         "imageUrl": "https://some.url.com/here/is/picYve.jpg",
