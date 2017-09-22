@@ -1,4 +1,0 @@
-object EsAndOsPopulator extends App {
-
-}
-
