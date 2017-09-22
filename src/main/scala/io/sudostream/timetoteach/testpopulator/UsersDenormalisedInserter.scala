@@ -42,6 +42,14 @@ trait UsersDenormalisedInserter {
             )
         }
 
+        val socialNetworkIds: List[Document] = user.socialNetworkIds.map {
+          socialNetworkId =>
+            Document(
+              "socialNetworkName" -> socialNetworkId.socialNetworkName,
+              "id" -> socialNetworkId.id
+            )
+        }
+
         Document(
           "_id" -> user.timeToTeachId,
           "fullName" -> user.fullName,
@@ -61,6 +69,7 @@ trait UsersDenormalisedInserter {
 
 
 case class User(timeToTeachId: String,
+                socialNetworkIds: List[SocialNetworkId],
                 fullName: String,
                 givenName: String,
                 familyName: String,
@@ -72,8 +81,9 @@ case class User(timeToTeachId: String,
 
 object User {
   implicit def UserCodecJson: CodecJson[User] =
-    casecodec8(User.apply, User.unapply)(
+    casecodec9(User.apply, User.unapply)(
       "_id",
+      "socialNetworkIds",
       "fullName",
       "givenName",
       "familyName",
@@ -95,6 +105,18 @@ object EmailDetails {
       "emailAddress",
       "validated",
       "preferred"
+    )
+}
+
+case class SocialNetworkId(socialNetworkName: String,
+                        id: String
+                       )
+
+object SocialNetworkId {
+  implicit def SocialNetworkIdCodecJson: CodecJson[SocialNetworkId] =
+    casecodec2(SocialNetworkId.apply, SocialNetworkId.unapply)(
+      "socialNetworkName",
+      "id"
     )
 }
 
