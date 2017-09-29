@@ -13,7 +13,11 @@ import scala.concurrent.duration.Duration
 
 trait MongoDbHelper {
 
-  def getUsersCollection: MongoCollection[Document] = {
+  case class DatabaseName(value: String)
+
+  case class CollectionName(value: String)
+
+  private def getCollection(databaseName: DatabaseName, collectionName: CollectionName): MongoCollection[Document] = {
     val config = ConfigFactory.load()
     val mongoKeystorePassword = try {
       sys.env("MONGODB_KEYSTORE_PASSWORD")
@@ -53,9 +57,9 @@ trait MongoDbHelper {
         MongoClient(mongoSslClientSettings)
       }
 
-    println("Now lets get the users database")
-    val database: MongoDatabase = mongoClient.getDatabase("users")
-    println("Drop the users database to clean things up")
+    println(s"Now lets get the ${databaseName.value} database")
+    val database: MongoDatabase = mongoClient.getDatabase(databaseName.value)
+    println(s"Drop the ${databaseName.value} database to clean things up")
     val dbDropObservable = database.drop()
     // We want to wait here until the database is dropped
     println("Lets just give it 9 seconds")
@@ -66,11 +70,20 @@ trait MongoDbHelper {
       case e: Exception => "Caught exception:\n" + e.getMessage + "\nBut ignoring."
     }
 
-    println("Get the users.denormalised collection")
-    val collection: MongoCollection[Document] = database.getCollection("users.denormalised")
+    println(s"Get the ${collectionName.value} collection")
+    val collection: MongoCollection[Document] = database.getCollection(collectionName.value)
 
     println("Cool, we're done getting the collection")
     collection
+
+  }
+
+  def getUsersCollection: MongoCollection[Document] = {
+    getCollection(DatabaseName("users"), CollectionName("users.denormalised"))
+  }
+
+  def getSchoosCollection: MongoCollection[Document] = {
+    getCollection(DatabaseName("schools"), CollectionName("schools"))
   }
 
 }
