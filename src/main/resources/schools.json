@@ -5,7 +5,7 @@
         "address": "Lochard Road, Aberfoyle",
         "postCode": "FK8 3SZ",
         "telephone": "01877 382278",
-        "localAuthority": "SCOTLAND__STIRLING",
+        "localAuthority": "STIRLING",
         "country": "SCOTLAND"
     },
     {
@@ -14,7 +14,7 @@
         "address": "Spittal Street, Stirling",
         "postCode": "FK8 1DU",
         "telephone": "01786 474757",
-        "localAuthority": "SCOTLAND__STIRLING",
+        "localAuthority": "STIRLING",
         "country": "SCOTLAND"
     },
     {
@@ -23,7 +23,7 @@
         "address": "Moor Road, Balfron",
         "postCode": "G63 0PD",
         "telephone": "01360 440027",
-        "localAuthority": "SCOTLAND__STIRLING",
+        "localAuthority": "STIRLING",
         "country": "SCOTLAND"
     }
 ]
