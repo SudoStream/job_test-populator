@@ -25,5 +25,77 @@
         "telephone": "01360 440027",
         "localAuthority": "STIRLING",
         "country": "SCOTLAND"
+    },
+    {
+        "_id": "",
+        "name": "St Ninians Primary School",
+        "address": "Torbrex Road, Stirling ",
+        "postCode": "FK7 9HN",
+        "telephone": "01786 237975",
+        "localAuthority": "STIRLING",
+        "country": "SCOTLAND"
+    },
+    {
+        "_id": "",
+        "name": "St Mary's Episcopal Primary School",
+        "address": "Smithy Loan, Dunblane",
+        "postCode": "FK15 0HQ",
+        "telephone": "01786 822740",
+        "localAuthority": "STIRLING",
+        "country": "SCOTLAND"
+    },
+    {
+        "_id": "",
+        "name": "St Mary's Primary School",
+        "address": "Park Drive, Bannockburn",
+        "postCode": "FK7 0EH",
+        "telephone": "01786 812294",
+        "localAuthority": "STIRLING",
+        "country": "SCOTLAND"
+    },
+    {
+        "_id": "",
+        "name": "Gartmore Primary School",
+        "address": "Gartmore",
+        "postCode": "FK8 3RJ",
+        "telephone": "01877 382343",
+        "localAuthority": "STIRLING",
+        "country": "SCOTLAND"
+    },
+    {
+        "_id": "",
+        "name": "Kincardine-in-Menteith Primary School",
+        "address": "Blair Drummond, Stirling",
+        "postCode": "FK9 4UX",
+        "telephone": "01786 841346",
+        "localAuthority": "STIRLING",
+        "country": "SCOTLAND"
+    },
+    {
+        "_id": "",
+        "name": "Doune Primary School",
+        "address": "Castlehill, Doune",
+        "postCode": "FK16 6BU",
+        "telephone": "01786 841435",
+        "localAuthority": "STIRLING",
+        "country": "SCOTLAND"
+    },
+    {
+        "_id": "",
+        "name": "Callander Primary School",
+        "address": "Bridgend, Callander",
+        "postCode": "FK17 8AG",
+        "telephone": "01877 331576",
+        "localAuthority": "STIRLING",
+        "country": "SCOTLAND"
+    },
+    {
+        "_id": "",
+        "name": "Cornton Primary School",
+        "address": "Cornton Road, Stirling",
+        "postCode": "FK9 5DZ",
+        "telephone": "01786 237911",
+        "localAuthority": "STIRLING",
+        "country": "SCOTLAND"
     }
 ]
