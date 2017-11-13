@@ -12,7 +12,7 @@ version := "0.0.27"
 
 //docker
 dockerBaseImage := "anapsix/alpine-java:8_server-jre"
-dockerRepository := Some("eu.gcr.io/time-to-teach")
+dockerRepository := Some("eu.gcr.io/time-to-teach-zone")
 dockerUpdateLatest := true
 packageName in Docker := "test-populator"
 
