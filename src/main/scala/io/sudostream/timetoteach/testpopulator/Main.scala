@@ -11,7 +11,6 @@ object Main extends App
   with ConsoleMessages {
 
   println(startupMessage)
-  insertUsers()
   insertSchools()
   println(finishedMessage)
 
