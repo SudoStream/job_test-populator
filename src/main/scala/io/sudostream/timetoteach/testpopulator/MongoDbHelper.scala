@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit
 
 import com.mongodb.connection.ClusterSettings
 import com.typesafe.config.ConfigFactory
+import io.sudostream.timetoteach.testpopulator.Main.mongoKeystorePassword
 import org.mongodb.scala.connection.{NettyStreamFactoryFactory, SslSettings}
 import org.mongodb.scala.{Document, MongoClient, MongoClientSettings, MongoCollection, MongoDatabase, ServerAddress}
 
@@ -19,14 +20,9 @@ trait MongoDbHelper {
 
   private def getCollection(databaseName: DatabaseName, collectionName: CollectionName): MongoCollection[Document] = {
     val config = ConfigFactory.load()
-    val mongoKeystorePassword = try {
-      sys.env("MONGODB_KEYSTORE_PASSWORD")
-    } catch {
-      case e: Exception => ""
-    }
 
     val mongoClient: MongoClient =
-      if (mongoKeystorePassword == "" || mongoKeystorePassword.isEmpty) {
+      if ((mongoKeystorePassword == "" || mongoKeystorePassword.isEmpty) && !Main.isMinikubeRun) {
         val mongoDbUri = config.getString("mongodb.connection_uri")
         println(s"mongo uri = '$mongoDbUri'")
         System.setProperty("org.mongodb.async.type", "netty")

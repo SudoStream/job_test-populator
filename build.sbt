@@ -8,7 +8,7 @@ enablePlugins(DockerPlugin)
 name := "test-populator"
 organization := "io.sudostream"
 scalaVersion := "2.11.8"
-version := "0.0.27"
+version := "0.0.28-1"
 
 //docker
 dockerBaseImage := "anapsix/alpine-java:8_server-jre"
