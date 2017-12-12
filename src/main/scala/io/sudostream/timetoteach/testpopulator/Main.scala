@@ -34,6 +34,7 @@ object Main extends App
   }
   catch {
     case e: Exception => ""
+      println("MINIKUBE = no with error")
       false
   }
 
